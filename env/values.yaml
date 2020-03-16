@@ -13,11 +13,13 @@ expose:
   - --v
   - 4
   config:
-    domain: dev.beethub.com.mx
+    domain: beethub.com.mx
     exposer: Ingress
-    http: "true"
-    tlsacme: "false"
+    http: "false"
+    tlsSecretName: tls-beethub-com-mx-p
+    tlsacme: "true"
     urltemplate: '{{.Service}}-{{.Namespace}}.{{.Domain}}'
+  production: true
 jenkins:
   Servers:
     Global: {}
